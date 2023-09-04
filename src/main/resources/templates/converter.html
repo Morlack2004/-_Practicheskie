@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер валют</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            background: #008080;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        form {
+            background: #ececec;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        form input[type="text"],
+        form select,
+        form input[type="submit"] {
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        form input[type="submit"] {
+            background: #008080;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Конвертер валют</h1>
+<form action="/convert" method="post">
+    <input type="text" name="amount" placeholder="Сумма" required>
+    <select name="fromCurrency" required>
+        <option value="USD">USD - Доллар США</option>
+        <option value="EUR">EUR - Евро</option>
+        <option value="GBP">GBP - Фунт стерлингов</option>
+        <option value="JPY">JPY - Японская иена</option>
+        <option value="AUD">AUD - Австралийский доллар</option>
+        <option value="RUB">RUB - Российский рубль</option>
+        <option value="CAD">CAD - Канадский доллар</option>
+        <option value="CHF">CHF - Швейцарский франк</option>
+        <option value="CNY">CNY - Китайский юань</option>
+        <option value="INR">INR - Индийская рупия</option>
+        <option value="BRL">BRL - Бразильский реал</option>
+    </select>
+    <select name="toCurrency" required>
+        <option value="USD">USD - Доллар США</option>
+        <option value="EUR">EUR - Евро</option>
+        <option value="GBP">GBP - Фунт стерлингов</option>
+        <option value="JPY">JPY - Японская иена</option>
+        <option value="AUD">AUD - Австралийский доллар</option>
+        <option value="RUB">RUB - Российский рубль</option>
+        <option value="CAD">CAD - Канадский доллар</option>
+        <option value="CHF">CHF - Швейцарский франк</option>
+        <option value="CNY">CNY - Китайский юань</option>
+        <option value="INR">INR - Индийская рупия</option>
+        <option value="BRL">BRL - Бразильский реал</option>
+    </select>
+    <input type="submit" value="Конвертировать">
+</form>
+</body>
+</html>

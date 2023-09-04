@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            background: #008080;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .calculator {
+            background: #ececec;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .calculator input[type="text"],
+        .calculator select,
+        .calculator input[type="submit"] {
+            margin: 10px;
+            padding: 10px;
+            width: 50px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .calculator input[type="submit"] {
+            background: #008080;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .calculator .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .calculator .buttons button {
+            padding: 10px;
+            background: #ccc;
+            border: 1px solid #888;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Калькулятор</h1>
+<div class="calculator">
+    <form action="/calculate" method="post">
+        <input type="text" name="num1" placeholder="Число 1" required>
+        <select name="operation" required>
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <input type="text" name="num2" placeholder="Число 2" required>
+        <div class="buttons">
+            <button onclick="selectField('num1')">Выбрать поле 1</button>
+            <button onclick="selectField('num2')">Выбрать поле 2</button>
+            <button onclick="addToField()">1</button>
+            <button onclick="addToField()">2</button>
+            <button onclick="addToField()">3</button>
+            <button onclick="addToField('+')">+</button>
+            <button onclick="addToField()">4</button>
+            <button onclick="addToField()">5</button>
+            <button onclick="addToField()">6</button>
+            <button onclick="addToField('-')">-</button>
+            <button onclick="addToField()">7</button>
+            <button onclick="addToField()">8</button>
+            <button onclick="addToField()">9</button>
+            <button onclick="addToField('*')">*</button>
+            <button onclick="addToField()">0</button>
+            <button onclick="addToField('.')">.</button>
+            <button onclick="clearField()">C</button>
+            <button onclick="addToField('/')">/</button>
+        </div>
+        <input type="submit" value="=">
+    </form>
+</div>
+
+<script>
+    let selectedField = 'num1';
+
+    function selectField(fieldName) {
+        selectedField = fieldName;
+    }
+
+    function addToField(value) {
+        const field = document.getElementsByName(selectedField)[0];
+        if (value === undefined) {
+            value = event.target.textContent;
+        }
+        if (value === 'C') {
+            field.value = '';
+        } else {
+            field.value += value;
+        }
+    }
+</script>
+</body>
+</html>

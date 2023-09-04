@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат конвертации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #008080;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .result_text {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        b {
+            font-size: 1.2em;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #008080;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Результат конвертации:</h1>
+<div class="result_text">
+    <p><b>Из:</b> <span th:text="${fromCurrency}"></span> <b>в:</b> <span th:text="${toCurrency}"></span></p>
+    <p><b>Сумма:</b> <span th:text="${amount}"></span> <span th:text="${fromCurrency}"></span> = <span th:text="${convertedAmount}"></span> <span th:text="${toCurrency}"></span></p>
+</div>
+<a href="/">На главную</a>
+</body>
+</html>
