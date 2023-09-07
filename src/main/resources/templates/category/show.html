@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр категории</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Категория</h1>
+<p>ID: <span th:text="${category.id}"></span></p>
+<p>Название: <span th:text="${category.name}"></span></p>
+<a th:href="@{'/category/' + ${category.id} + '/edit'}" class="btn-edit">Редактировать</a>
+<form th:method="delete" th:action="@{'/category/' + ${category.id}}" id="deleteCategoryForm">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Удалить" class="btn-delete">
+</form>
+<a href="/category" class="btn-back">Вернуться к списку категорий</a>
+
+<script>
+    document.getElementById("deleteCategoryForm").addEventListener("submit", function(event) {
+        if (!confirm("Вы уверены, что хотите удалить эту категорию?")) {
+            event.preventDefault(); // Отмена отправки формы
+        }
+    });
+</script>
+</body>
+</html>

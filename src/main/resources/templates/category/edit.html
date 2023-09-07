@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование категории</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Редактирование категории</h1>
+<form th:method="post" th:action="@{'/category/' + ${category.id}}" th:object="${category}">
+    <label for="name">Название:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required>
+    <input type="hidden" name="_method" value="patch">
+    <input type="submit" value="Сохранить" class="btn-save">
+</form>
+<a href="/category" class="btn-back">Отмена</a>
+</body>
+</html>

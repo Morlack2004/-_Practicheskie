@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр пользователя</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Пользователь</h1>
+<p>ID: <span th:text="${user.id}"></span></p>
+<p>Имя: <span th:text="${user.username}"></span></p>
+<p>Email: <span th:text="${user.email}"></span></p>
+<a th:href="@{'/user/' + ${user.id} + '/edit'}" class="btn-edit">Редактировать</a>
+<form th:method="delete" th:action="@{'/user/' + ${user.id}}">
+    <input type="submit" value="Удалить" class="btn-delete">
+</form>
+<a href="/user" class="btn-back">Вернуться к списку пользователей</a>
+</body>
+</html>

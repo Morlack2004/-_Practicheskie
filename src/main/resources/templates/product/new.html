@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание нового пользователя</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Создание нового пользователя</h1>
+<form th:method="post" th:action="@{/user}">
+    <label for="username">Имя:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="submit" value="Создать" class="btn-save">
+</form>
+<a href="/user" class="btn-back">Отмена</a>
+</body>
+</html>

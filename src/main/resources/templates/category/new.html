@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание новой категории</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Создание новой категории</h1>
+<form th:method="post" th:action="@{/category}" th:object="${category}">
+    <label for="name">Название:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required>
+    <input type="submit" value="Создать" class="btn-save">
+</form>
+<a href="/category" class="btn-back">Отмена</a>
+</body>
+</html>

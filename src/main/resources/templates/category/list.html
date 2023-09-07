@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список категорий</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Список категорий</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Действия</th>
+    </tr>
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}"></td>
+        <td th:text="${category.name}"></td>
+        <td>
+            <a th:href="@{'/category/' + ${category.id}}" class="btn-view">Просмотр</a>
+            <a th:href="@{'/category/' + ${category.id} + '/edit'}" class="btn-edit">Редактировать</a>
+            <a th:href="@{'/category/' + ${category.id}}" class="btn-delete" th:method="delete">Удалить</a>
+        </td>
+    </tr>
+</table>
+<a href="/category/new" class="btn-new">Создать новую категорию</a>
+</body>
+</html>
