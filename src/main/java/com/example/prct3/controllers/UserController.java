@@ -69,6 +69,13 @@ public class UserController {
 
         userRepository.save(user);
         return "redirect:/"; // Перенаправление на главную страницу после успешного обновления
+    }@GetMapping("/search")
+    public String searchUsersByName(@RequestParam String q, Model model) {
+        List<User> users = userRepository.findByNameContainingIgnoreCase(q);
+        model.addAttribute("users", users);
+        return "index";
     }
+
+
 
 }
