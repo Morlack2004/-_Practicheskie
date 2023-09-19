@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавить ноутбук</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Добавить ноутбук</h1>
+<form th:action="@{/laptop/add}" method="post" th:object="${laptop}">
+    <label for="brand">Бренд:</label>
+    <input type="text" id="brand" name="brand" th:field="*{brand}" /><br/>
+
+    <label for="model">Модель:</label>
+    <input type="text" id="model" name="model" th:field="*{model}" /><br/>
+
+    <label for="price">Цена:</label>
+    <input type="text" id="price" name="price" th:field="*{price}" /><br/>
+
+    <input type="submit" value="Добавить" />
+</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Детали заказа</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Детали заказа</h1>
+<p>ID: <span th:text="${order.id}"></span></p>
+<p>Имя клиента: <span th:text="${order.customerName}"></span></p>
+<p>Общая стоимость: <span th:text="${order.totalPrice}"></span></p>
+<p>Дата заказа: <span th:text="${#dates.format(order.orderDate, 'dd.MM.yyyy')}"></span></p>
+<!-- Добавьте другие поля заказа по аналогии -->
+<a href="/">на главную</a>
+
+</body>
+</html>

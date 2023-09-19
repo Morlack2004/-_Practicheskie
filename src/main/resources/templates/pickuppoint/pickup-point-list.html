@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список пунктов выдачи</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Список пунктов выдачи</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Адрес</th>
+        <th>Рабочие часы</th>
+        <th>Действия</th> <!-- Добавляем колонку для действий -->
+    </tr>
+    <tr th:each="pickupPoint : ${pickupPoints}">
+        <td th:text="${pickupPoint.id}"></td>
+        <td th:text="${pickupPoint.address}"></td>
+        <td th:text="${pickupPoint.workingHours}"></td>
+        <td>
+            <a th:href="@{/pickup-point/details/{id}(id=${pickupPoint.id})}">Подробнее</a> |
+            <a th:href="@{/pickup-point/edit/{id}(id=${pickupPoint.id})}">Редактировать</a> |
+            <a th:href="@{/pickup-point/delete/{id}(id=${pickupPoint.id})}" onclick="return confirm('Вы уверены?')">Удалить</a>
+        </td>
+    </tr>
+</table>
+<a th:href="@{/pickup-point/add}">Добавить пункт выдачи</a>
+<a href="/">на главную</a>
+</body>
+</html>

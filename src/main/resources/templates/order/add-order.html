@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Добавить заказ</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Добавить заказ</h1>
+<form th:action="@{/order/save}" method="post" th:object="${order}">
+  <label for="customerName">Имя клиента:</label>
+  <input type="text" id="customerName" name="customerName" th:field="*{customerName}" /><br/>
+
+  <label for="totalPrice">Общая стоимость:</label>
+  <input type="text" id="totalPrice" name="totalPrice" th:field="*{totalPrice}" /><br/>
+  <label for="orderDate">Дата заказа:</label>
+  <input type="date" id="orderDate" name="orderDate" th:field="*{orderDate}" /><br/>
+
+  <input type="submit" value="Добавить" />
+</form>
+</body>
+</html>

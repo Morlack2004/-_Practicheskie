@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список продуктов</title>
+</head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+
+<body>
+<h1>Список продуктов</h1>
+<table border="1">
+    <tr>
+        <th>Имя</th>
+        <th>Категория</th>
+        <th>Цена</th>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.category}"></td>
+        <td th:text="${product.price}"></td>
+        <td><a th:href="@{/product/details/{id}(id=${product.id})}">Детали</a></td>
+
+        <td><a th:href="@{/product/edit/{id}(id=${product.id})}">Редактировать</a></td>
+        <td><a th:href="@{/product/delete/{id}(id=${product.id})}">Удалить</a></td>
+
+    </tr>
+</table>
+<a th:href="@{/addproduct}">Добавить продукт</a>
+<a href="/">на главную </a>
+</body>
+</html>

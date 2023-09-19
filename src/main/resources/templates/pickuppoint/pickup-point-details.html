@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Детали пункта выдачи</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Детали пункта выдачи</h1>
+<p>ID: <span th:text="${pickupPoint.id}"></span></p>
+<p>Адрес: <span th:text="${pickupPoint.address}"></span></p>
+<p>Рабочие часы: <span th:text="${pickupPoint.workingHours}"></span></p>
+<!-- Добавьте другие поля пункта выдачи по аналогии -->
+<a href="/">на главную</a>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактировать пункт выдачи</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Редактировать пункт выдачи</h1>
+<form th:action="@{/pickup-point/edit/{id}(id=${pickupPoint.id})}" method="post" th:object="${pickupPoint}">
+    <input type="hidden" th:field="*{id}" />
+    <label for="address">Адрес:</label>
+    <input type="text" id="address" name="address" th:field="*{address}" /><br/>
+
+    <label for="workingHours">Рабочие часы:</label>
+    <input type="text" id="workingHours" name="workingHours" th:field="*{workingHours}" /><br/>
+
+    <input type="submit" value="Сохранить" />
+</form>
+</body>
+</html>

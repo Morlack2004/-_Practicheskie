@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Список ноутбуков</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Список ноутбуков</h1>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Бренд</th>
+    <th>Модель</th>
+    <th>Цена</th>
+  </tr>
+  <tr th:each="laptop : ${laptops}">
+    <td th:text="${laptop.id}"></td>
+    <td th:text="${laptop.brand}"></td>
+    <td th:text="${laptop.model}"></td>
+    <td th:text="${laptop.price}"></td>
+    <td><a th:href="@{/laptop/details/{id}(id=${laptop.id})}">Детали</a></td>
+    <td><a th:href="@{/laptop/edit/{id}(id=${laptop.id})}">Редактировать</a></td>
+    <td><a th:href="@{/laptop/delete/{id}(id=${laptop.id})}">Удалить</a></td>
+  </tr>
+</table>
+<a th:href="@{/addLaptop}">Добавить ноутбук</a>
+<a href="/">на главную</a>
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Детали продукта</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Детали продукта</h1>
+<p>Имя: <span th:text="${product.name}"></span></p>
+<p>Категория: <span th:text="${product.category}"></span></p>
+<p>Цена: <span th:text="${product.price}"></span></p>
+<a href="/">на главную</a>
+
+</body>
+</html>

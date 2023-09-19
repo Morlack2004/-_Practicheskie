@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Детали ноутбука</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Детали ноутбука</h1>
+<p>Бренд: <span th:text="${laptop.brand}"></span></p>
+<p>Модель: <span th:text="${laptop.model}"></span></p>
+<p>Цена: <span th:text="${laptop.price}"></span></p>
+<a href="/">на главную</a>
+
+</body>
+</html>

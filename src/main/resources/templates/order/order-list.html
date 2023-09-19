@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список заказов</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body>
+<h1>Список заказов</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Имя клиента</th>
+        <th>Общая стоимость</th>
+        <th>Дата заказа</th>
+        <th>Действия</th> <!-- Добавляем колонку для действий -->
+    </tr>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.id}"></td>
+        <td th:text="${order.customerName}"></td>
+        <td th:text="${order.totalPrice}"></td>
+        <td th:text="${#dates.format(order.orderDate, 'dd.MM.yyyy')}"></td>
+        <td>
+            <a th:href="@{/order/details/{id}(id=${order.id})}">Подробнее</a> |
+            <a th:href="@{/order/edit/{id}(id=${order.id})}">Редактировать</a> |
+            <a th:href="@{/order/delete/{id}(id=${order.id})}" onclick="return confirm('Вы уверены?')">Удалить</a>
+        </td>
+    </tr>
+</table>
+<a th:href="@{/order/add}">Добавить заказ</a>
+
+<a href="/">на главную</a>
+
+</body>
+</html>
